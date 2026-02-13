@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For KHUSHALI ❤️</title>
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg,#000000,#3a003f);
+    color: gold;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* PASSWORD SCREEN */
+#passwordScreen{
+    position:absolute;
+    top:40%;
+    width:100%;
+}
+
+input{
+    padding:10px;
+    border-radius:25px;
+    border:none;
+    text-align:center;
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border-radius:30px;
+    border:none;
+    background:gold;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:white;
+}
+
+/* MAIN CONTENT */
+#mainContent{
+    display:none;
+    padding-top:40px;
+}
+
+h1{
+    font-size:2.8rem;
+    animation:fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RING ANIMATION */
+.ring{
+    font-size:60px;
+    animation: ringGlow 2s infinite alternate;
+}
+
+@keyframes ringGlow{
+    from{transform:scale(1);}
+    to{transform:scale(1.2); text-shadow:0 0 20px gold;}
+}
+
+/* FIREWORK CANVAS */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
+frameborder="0" allow="autoplay"></iframe>
+
+<!-- PASSWORD -->
+<div id="passwordScreen">
+<h2>Enter Password For Royal Surprise 👑</h2>
+<input type="password" id="passwordInput" placeholder="Enter password">
+<br>
+<button onclick="checkPassword()">Unlock ❤️</button>
+</div>
+
+<!-- MAIN -->
+<div id="mainContent">
+<h1>KHUSHALI ❤️</h1>
+<h2>You Are My Queen 👑</h2>
+
+<div id="proposal">
+<h2>Will You Be Mine Forever?</h2>
+<div class="ring">💍</div>
+<button onclick="accepted()">Yes ❤️</button>
+<button onclick="accepted()">Only Yes 😌</button>
+</div>
+
+<p>
+Every smile of yours is my peace.<br>
+Every hug of yours is my home.<br>
+You are my forever.
+</p>
+
+<h3>Forever Yours,</h3>
+<h2>Hiren ❤️</h2>
+</div>
+
+<canvas id="fireworks"></canvas>
+
+<script>
+function checkPassword(){
+    if(document.getElementById("passwordInput").value === "i love you"){
+        document.getElementById("passwordScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
+    }else{
+        alert("Wrong password ❤️");
+    }
+}
+
+function accepted(){
+    launchFireworks();
+    alert("She Said YESSS ❤️🎆 Forever Begins!");
+}
+
+/* SIMPLE FIREWORK EFFECT */
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+function launchFireworks(){
+    for(let i=0;i<30;i++){
+        let x=Math.random()*canvas.width;
+        let y=Math.random()*canvas.height/2;
+        ctx.beginPath();
+        ctx.arc(x,y,5,0,Math.PI*2);
+        ctx.fillStyle="gold";
+        ctx.fill();
+    }
+}
+</script>
+
+</body>
+</html>
